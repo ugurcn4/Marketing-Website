@@ -1,0 +1,124 @@
+/* contact.module.css */
+
+/* Genel Sayfa Stil */
+.contactPage {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f9f9ff, #f3e9ff);
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Başlık Alanı */
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header h1 {
+    font-size: 42px;
+    color: #6c5ce7;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 18px;
+    color: #a29bfe;
+}
+
+/* İletişim Formu Bölümü */
+.contactFormSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactForm {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Form Grupları */
+.formGroup {
+    margin-bottom: 25px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #6c5ce7;
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    background-color: #f9f9ff;
+    font-size: 14px;
+    color: #2d3436;
+    transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    border-color: #6c5ce7;
+    outline: none;
+}
+
+/* Gönder Butonu */
+.submitButton {
+    background-color: #6c5ce7;
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submitButton:hover {
+    background-color: #5a51d6;
+    transform: translateY(-2px);
+}
+
+.submitButton:active {
+    transform: translateY(0);
+}
+
+/* Footer */
+.footer {
+    padding: 30px 20px;
+    background: #6c5ce7;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    border-top: 4px solid #a29bfe;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
