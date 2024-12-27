@@ -20,7 +20,14 @@ export const productData = [
         features: ["Feature A", "Feature B", "Feature C"],
         image: "https://via.placeholder.com/300",
     },
-    // Diğer ürünler...
+    {
+        id: 3,
+        name: "Product 3",
+        description: "Designed with care and precision.",
+        features: ["Feature A", "Feature B", "Feature C"],
+        image: "https://via.placeholder.com/300",
+    },
+    
 ];
 
 const ProductFeatures = () => {

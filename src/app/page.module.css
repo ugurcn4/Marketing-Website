@@ -194,6 +194,13 @@
   font-size: 16px;
 }
 
+.productCard:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background-color: var(--accent-color);
+    color: var(--light-color);
+}
+
 /* Footer */
 .footer {
   padding: 40px 20px;

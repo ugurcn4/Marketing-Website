@@ -5,8 +5,17 @@ import styles from './page.module.css';
 import Testimonials from "@/app/components/Testimonials";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import { productData } from '@/pages/productfeatures';
+import { useRouter } from 'next/navigation';
 
 const Home = () => {
+    const router = useRouter();
+    const handleProductClick = (id:number) => {
+        const url = `/productfeatures?id=${id}`;
+        console.log(`Navigating to /productfeatures?id=${id}`);
+        router.push(url); 
+    };
+
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
@@ -40,21 +49,18 @@ const Home = () => {
             <section className={styles.products}>
                 <h2>Our Products</h2>
                 <div className={styles.productGrid}>
-                    <div className={styles.productCard}>
-                        <img src="https://picsum.photos/150" alt="Product 1" />
-                        <h3>Product 1</h3>
-                        <p>High-quality product for your needs.</p>
-                    </div>
-                    <div className={styles.productCard}>
-                        <img src="https://picsum.photos/150" alt="Product 2" />
-                        <h3>Product 2</h3>
-                        <p>Innovative and reliable solutions.</p>
-                    </div>
-                    <div className={styles.productCard}>
-                        <img src="https://picsum.photos/150" alt="Product 3" />
-                        <h3>Product 3</h3>
-                        <p>Designed with care and precision.</p>
-                    </div>
+                        {productData.map((product) => (
+                            <div
+                                key={product.id}
+                                className={styles.productCard}
+                                onClick={() => handleProductClick(product.id)}
+                                style={{ cursor: "pointer" }}
+                            >
+                                <img src={product.image} alt={product.name} />
+                                <h3>{product.name}</h3>
+                                <p>{product.description}</p>
+                            </div>
+                        ))}
                 </div>
             </section>
 
