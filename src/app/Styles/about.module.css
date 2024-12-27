@@ -1,0 +1,114 @@
+/* pages.module.css */
+
+/* General Page Style */
+.aboutPage {
+    font-family: 'Arial', sans-serif;
+    background-color: #F5EFFF;
+    padding: 60px 20px;
+}
+
+/* Header Style */
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header h1 {
+    font-size: 48px;
+    color: #A294F9;
+    font-weight: bold;
+}
+
+.header p {
+    font-size: 18px;
+    color: #CDC1FF;
+    margin-top: 10px;
+}
+
+/* Mission and Vision Section */
+.missionVision {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.mission,
+.vision {
+    background-color: #E5D9F2;
+    padding: 30px;
+    border-radius: 15px;
+    width: 48%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mission h2,
+.vision h2 {
+    font-size: 28px;
+    color: #A294F9;
+    margin-bottom: 20px;
+}
+
+.mission p,
+.vision p {
+    font-size: 18px;
+    color: #CDC1FF;
+    line-height: 1.6;
+}
+
+/* Team Section */
+.teamSection {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.teamSection h2 {
+    font-size: 32px;
+    color: #A294F9;
+    margin-bottom: 40px;
+}
+
+.teamMembers {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.teamMember {
+    background-color: #E5D9F2;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.teamMember h3 {
+    font-size: 22px;
+    color: #A294F9;
+    margin-top: 15px;
+}
+
+.teamMember p {
+    font-size: 16px;
+    color: #CDC1FF;
+}
+
+/* Team Member Image */
+.teamMemberImg {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    font-size: 14px;
+    color: #CDC1FF;
+    margin-top: 50px;
+}
+
+.footer p {
+    margin: 0;
+}

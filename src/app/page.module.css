@@ -1,0 +1,246 @@
+/* page.module.css */
+
+/* Genel ayarlar */
+:root {
+  --primary-color: #A294F9; /* Header ve Footer arka plan rengi */
+  --secondary-color: #CDC1FF; /* Vurgulu bölümler */
+  --light-color: #F5EFFF; /* Açık tonlar */
+  --neutral-color: #E5D9F2; /* Nötr tonlar */
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  color: var(--neutral-color);
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+}
+
+.navItem {
+  color: var(--light-color);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navItem:hover {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navItem:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Slider */
+.slider {
+  height: 700px;
+  background-color: var(--neutral-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 5px solid var(--secondary-color);
+}
+
+.sliderWrapper {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: slideShow 15s infinite;
+}
+
+@keyframes slideShow {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* About Section */
+.about {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #F5EFFF;
+}
+
+.aboutCard {
+  background-color: #E5D9F2;
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.aboutCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.aboutTitle {
+  font-size: 32px;
+  color: #A294F9;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.aboutText {
+  font-size: 18px;
+  color: #CDC1FF;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .aboutCard {
+    padding: 30px 20px;
+  }
+
+  .aboutTitle {
+    font-size: 28px;
+  }
+
+  .aboutText {
+    font-size: 16px;
+  }
+}
+
+/* Products Section */
+.products {
+  padding: 40px 20px;
+  background-color: var(--neutral-color);
+  text-align: center;
+}
+
+.products h2 {
+  color: var(--primary-color);
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.productCard {
+  background-color: var(--light-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.productCard img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.productCard h3 {
+  color: var(--primary-color);
+  font-size: 22px;
+  margin-top: 15px;
+}
+
+.productCard p {
+  color: var(--secondary-color);
+  font-size: 16px;
+}
+
+/* Footer */
+.footer {
+  padding: 40px 20px;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  text-align: center;
+  font-size: 14px;
+  border-top: 5px solid var(--secondary-color);
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footerLogo h1 {
+  color: var(--secondary-color);
+}
+
+.footerNav {
+  display: flex;
+  gap: 25px;
+}
+
+.footerLink {
+  color: var(--light-color);
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footerLink:hover {
+  color: var(--secondary-color);
+}
+
+.scrollToTopButton {
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  color: var(--light-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.scrollToTopButton:hover {
+  background-color: var(--primary-color);
+}

@@ -1,0 +1,98 @@
+/* testimonials.module.css */
+
+/* Testimonials Section */
+.testimonials {
+    padding: 60px 20px;
+    background-color: #F5EFFF;
+    text-align: center;
+}
+
+.sectionTitle {
+    font-size: 32px;
+    color: #A294F9;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+/* Testimonial Cards */
+.testimonialCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.testimonialCard {
+    background-color: #E5D9F2;
+    padding: 30px;
+    width: 280px;
+    max-width: 280px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.testimonialCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.customerImg {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 2px solid #A294F9;
+}
+
+.testimonialContent {
+    width: 100%;
+}
+
+.testimonialText {
+    font-size: 16px;
+    color: #CDC1FF;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.customerName {
+    font-size: 18px;
+    font-weight: bold;
+    color: #A294F9;
+}
+
+.customerRole {
+    font-size: 14px;
+    color: #CDC1FF;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* Star Rating */
+.rating {
+    margin-bottom: 15px;
+}
+
+.star {
+    color: #F7D07A;
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .testimonialCards {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .testimonialCard {
+        width: 80%;
+    }
+}
