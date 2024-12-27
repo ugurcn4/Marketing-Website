@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "marketing-website": "file:",
     "next": "15.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

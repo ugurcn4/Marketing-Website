@@ -7,7 +7,6 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
 const Home = () => {
-    //
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };

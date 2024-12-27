@@ -1,0 +1,31 @@
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #7F8C8D;
+    --neutral-color: #F4F6F8;
+    --light-color: #FFFFFF;
+    --accent-color: #E94E77;
+}
+
+.productFeaturesPage {
+    background-color: var(--neutral-color);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.featuresSection {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.productImage {
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+
