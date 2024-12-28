@@ -1,98 +1,83 @@
 /* testimonials.module.css */
 
-/* Testimonials Section */
 .testimonials {
+    width: 100%;
     padding: 60px 20px;
-    background-color: #F5EFFF;
+    background-color: #f9fafc;
     text-align: center;
+}
+
+.testimonialsContainer {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .sectionTitle {
-    font-size: 32px;
-    color: #A294F9;
-    margin-bottom: 40px;
-    font-weight: 600;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-/* Testimonial Cards */
-.testimonialCards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+.sectionSubtitle {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.testimonialGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
 .testimonialCard {
-    background-color: #E5D9F2;
-    padding: 30px;
-    width: 280px;
-    max-width: 280px;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .testimonialCard:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .customerImg {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 2px solid #A294F9;
+    margin-bottom: 15px;
 }
 
-.testimonialContent {
-    width: 100%;
+.rating {
+    margin-bottom: 10px;
+}
+
+.star {
+    color: #f5c518;
+    font-size: 18px;
+    margin-right: 2px;
 }
 
 .testimonialText {
     font-size: 16px;
-    color: #CDC1FF;
-    font-style: italic;
-    margin-bottom: 20px;
+    color: #555;
+    margin: 10px 0 20px;
+    line-height: 1.6;
 }
 
 .customerName {
     font-size: 18px;
     font-weight: bold;
-    color: #A294F9;
+    color: #333;
+    margin: 0;
 }
 
 .customerRole {
     font-size: 14px;
-    color: #CDC1FF;
-    font-weight: 500;
-    margin-top: 5px;
-}
-
-/* Star Rating */
-.rating {
-    margin-bottom: 15px;
-}
-
-.star {
-    color: #F7D07A;
-    font-size: 18px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .testimonialCards {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .testimonialCard {
-        width: 80%;
-    }
+    color: #888;
+    margin: 0;
 }

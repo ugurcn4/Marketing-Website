@@ -1,59 +1,80 @@
-// pages/about.tsx
-
 'use client';
 
 import React from 'react';
-import styles from '../app/Styles/about.module.css';
+import styles from './../app/Styles/contact.module.css';
+import Header from "@/app/components/Header";
 
 const About = () => {
     return (
         <div className={styles.aboutPage}>
             {/* Header */}
+            <Header/>
             <header className={styles.header}>
-        <h1>About Us</h1>
-    <p>Learn more about our journey, mission, and team.</p>
-    </header>
+                <h1 className={styles.pageTitle}>Hakkımızda</h1>
+                <p className={styles.pageDescription}>
+                    Yolculuğumuz, misyonumuz ve ekibimiz hakkında daha fazla bilgi edinin.
+                </p>
+            </header>
 
-    {/* Mission & Vision Section */}
-    <section className={styles.missionVision}>
-    <div className={styles.mission}>
-        <h2>Our Mission</h2>
-    <p>To deliver the best products and services that meet our customers' needs and exceed their expectations.</p>
-    </div>
-    <div className={styles.vision}>
-        <h2>Our Vision</h2>
-    <p>To become a global leader in our industry by continuously innovating and focusing on customer satisfaction.</p>
-    </div>
-    </section>
+            {/* Mission & Vision Section */}
+            <section className={styles.missionVision}>
+                <div className={styles.mission}>
+                    <h2 className={styles.sectionTitle}>Misyonumuz</h2>
+                    <p className={styles.sectionText}>
+                        Bu ders, Next.js ve React.js kullanarak bir web uygulaması oluşturmayı öğretmek için tasarlanmıştır.
+                        İleri İnternet Programlama dersi kapsamında hazırlanmıştır.
+                        Misyonumuz, bu dersin finalinden başarılı bir şekilde geçmek ve yüksek not almaktır.
+                    </p>
+                </div>
+                <div className={styles.vision}>
+                    <h2 className={styles.sectionTitle}>Vizyonumuz</h2>
+                    <p className={styles.sectionText}>
+                        Gelecekte başarılı birer yazılımcı olmak ve bu alanda kariyer yapmak için çalışmalarımızı sürdürüyoruz.
+                        Yenilikçi fikirlerimiz ve projelerimizle sektöre yön vermek istiyoruz.
+                    </p>
+                </div>
+            </section>
 
-    {/* Team Section */}
-    <section className={styles.teamSection}>
-        <h2>Meet the Team</h2>
-    <div className={styles.teamMembers}>
-    <div className={styles.teamMember}>
-    <img src="https://via.placeholder.com/150" alt="Team Member" className={styles.teamMemberImg} />
-    <h3>John Doe</h3>
-    <p>CEO & Founder</p>
-    </div>
-    <div className={styles.teamMember}>
-    <img src="https://via.placeholder.com/150" alt="Team Member" className={styles.teamMemberImg} />
-    <h3>Jane Smith</h3>
-    <p>Chief Marketing Officer</p>
-    </div>
-    <div className={styles.teamMember}>
-    <img src="https://via.placeholder.com/150" alt="Team Member" className={styles.teamMemberImg} />
-    <h3>Michael Green</h3>
-    <p>Lead Developer</p>
-    </div>
-    </div>
-    </section>
+            {/* Team Section */}
+            <section className={styles.teamSection}>
+                <h2 className={styles.sectionTitle}>Takımımız</h2>
+                <div className={styles.teamMembers}>
+                    <div className={styles.teamMember}>
+                        <img
+                            src="https://via.placeholder.com/150"
+                            alt="Team Member"
+                            className={styles.teamMemberImg}
+                        />
+                        <h3 className={styles.teamMemberName}>Yasin FİDAN</h3>
+                        <p className={styles.teamMemberRole}>Computer Engineer</p>
+                    </div>
+                    <div className={styles.teamMember}>
+                        <img
+                            src="https://via.placeholder.com/150"
+                            alt="Team Member"
+                            className={styles.teamMemberImg}
+                        />
+                        <h3 className={styles.teamMemberName}>Uğur Can UÇAR</h3>
+                        <p className={styles.teamMemberRole}>Computer Engineer</p>
+                    </div>
+                    <div className={styles.teamMember}>
+                        <img
+                            src="https://via.placeholder.com/150"
+                            alt="Team Member"
+                            className={styles.teamMemberImg}
+                        />
+                        <h3 className={styles.teamMemberName}>Betül AKDOĞAN</h3>
+                        <p className={styles.teamMemberRole}>Computer Engineer</p>
+                    </div>
+                </div>
+            </section>
 
-    {/* Footer */}
-    <footer className={styles.footer}>
-        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
-    </footer>
-    </div>
-);
+            {/* Footer */}
+            <footer className={styles.footer}>
+                <p>&copy; 2024 BUY STORE. All rights reserved.</p>
+            </footer>
+        </div>
+    );
 };
 
 export default About;

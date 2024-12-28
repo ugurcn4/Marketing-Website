@@ -104,3 +104,11 @@
     margin-top: 50px;
     letter-spacing: 0.5px;
 }
+.productCard img {
+    width: 100%;
+    height: auto;
+    max-width: 200px; /* İhtiyaca göre boyutu ayarlayın */
+    object-fit: cover; /* Görselin orantılı şekilde sığması için */
+    margin-bottom: 10px; /* Resim ile yazı arasındaki mesafe */
+    border-radius: 8px; /* Köşelerin yuvarlatılması */
+}

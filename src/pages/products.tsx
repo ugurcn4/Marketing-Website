@@ -17,8 +17,8 @@ const Products = () => {
             {/* Header */}
             <Header/>
             <header className={styles.header}>
-                <h1>Our Products</h1>
-                <p>Discover our range of high-quality products designed to meet your needs.</p>
+                <h1>Ürünlerimiz</h1>
+                <p>İhtiyaçlarınızı karşılamak üzere tasarlanmış yüksek kaliteli ürün yelpazemizi keşfedin.</p>
             </header>
             <div className={styles.productsSection}>
                 {productData.map((product) => (
