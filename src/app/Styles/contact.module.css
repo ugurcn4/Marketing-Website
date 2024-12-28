@@ -24,6 +24,117 @@
     max-width: 700px;
     margin: 0 auto;
 }
+/* İletişim Formu Bölümü */
+.contactFormSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactForm {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Form Grupları */
+.formGroup {
+    margin-bottom: 25px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #6c5ce7;
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    background-color: #f9f9ff;
+    font-size: 14px;
+    color: #2d3436;
+    transition: border-color 0.3s ease;
+}
+/* Dropdown Menü */
+.formGroup select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    background-color: #f9f9ff;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2d3436;
+    appearance: none; /* Tarayıcı varsayılan okunu gizler */
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236c5ce7"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formGroup select:focus {
+    border-color: #6c5ce7;
+    outline: none;
+    box-shadow: 0 0 5px rgba(108, 92, 231, 0.4);
+}
+/* Dropdown Yazı Stili */
+.formGroup select option {
+    color: #6c5ce7; /* Yazı rengi */
+    font-size: 14px; /* Yazı boyutu */
+    font-weight: 500; /* Yazı kalınlığı */
+    background-color: #f9f9ff; /* Arka plan rengi */
+    padding: 10px; /* İç boşluk */
+    border: none; /* Kenarlık olmaması */
+    text-align: left; /* Yazıyı sola hizala */
+    cursor: pointer;
+}
+
+/* Dropdown Seçim Stili */
+.formGroup select option:checked {
+    background-color: #e8dfff; /* Seçilen ürünün arka plan rengi */
+    color: #2d3436; /* Seçilen ürünün yazı rengi */
+    font-weight: 600; /* Daha kalın yazı */
+}
+.formGroup input:focus,
+.formGroup textarea:focus {
+    border-color: #6c5ce7;
+    outline: none;
+}
+
+/* Gönder Butonu */
+.submitButton {
+    background-color: #6c5ce7;
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submitButton:hover {
+    background-color: #5a51d6;
+    transform: translateY(-2px);
+}
+
+.submitButton:active {
+    transform: translateY(0);
+}
+
 
 .missionVision {
     display: flex;
