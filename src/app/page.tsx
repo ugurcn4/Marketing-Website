@@ -1,16 +1,35 @@
 'use client';
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './page.module.css';
 import Testimonials from "@/app/components/Testimonials";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Slider from "@/app/components/Slider";
+import { productData } from '@/pages/productfeatures';
+import { useRouter } from 'next/navigation';
 
 const Home = () => {
+    const router = useRouter();
+    const [mounted, setMounted] = useState<boolean>(false);
+
+    useEffect(() => {
+        setMounted(true); // Bileşen mount olduktan sonra mounted'i true yapıyoruz
+    }, []);
+
+    const handleProductClick = (id:number) => {
+        const url = `/productfeatures?id=${id}`;
+        console.log(`Navigating to /productfeatures?id=${id}`);
+        router.push(url); 
+    };
+
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    if (!mounted) {
+        return null; // Bileşen istemci tarafında render edilene kadar hiçbir şey render etmiyoruz
+    }
 
     return (
         <div>
@@ -47,28 +66,19 @@ const Home = () => {
                         Yüksek performans ve kaliteye odaklanmış ürünlerimizi keşfedin.
                     </p>
                     <div className={styles.productGrid}>
-                        <div className={styles.productCard}>
-                            <img src="/img/rtx-ultra.jpg" alt="Ekran Kartı 1" className={styles.productImage} />
-                            <h3 className={styles.productName}>RTX Ultra</h3>
-                            <p className={styles.productDescription}>
-                                Yüksek çözünürlükte oyun ve grafik tasarım için ideal ekran kartı.
-                            </p>
-                        </div>
-                        <div className={styles.productCard}>
-                            <img src="/img/gtx-pro.jpg" alt="Ekran Kartı 2" className={styles.productImage} />
-                            <h3 className={styles.productName}>GTX Pro</h3>
-                            <p className={styles.productDescription}>
-                                Performans ve verimlilik arayan profesyoneller için.
-                            </p>
-                        </div>
-                        <div className={styles.productCard}>
-                            <img src="/img/vega-master.jpg" alt="Ekran Kartı 3" className={styles.productImage} />
-                            <h3 className={styles.productName}>Vega Master</h3>
-                            <p className={styles.productDescription}>
-                                Yüksek hız ve dayanıklılığı bir arada sunar.
-                            </p>
-                        </div>
-                    </div>
+                        {productData.map((product) => (
+                            <div
+                                key={product.id}
+                                className={styles.productCard}
+                                onClick={() => handleProductClick(product.id)}
+                                style={{ cursor: "pointer" }}
+                            >
+                                <img src={product.image} alt={product.name} />
+                                <h3>{product.name}</h3>
+                                <p>{product.description}</p>
+                            </div>
+                        ))}
+                </div>
                 </div>
             </section>
 

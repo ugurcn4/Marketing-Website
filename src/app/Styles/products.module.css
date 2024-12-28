@@ -9,7 +9,7 @@
 
 .productsPage {
     padding: 20px;
-    background-color: var(--neutral-color);
+    background-color: #f8f9f6;
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     min-height: 100vh;
@@ -18,6 +18,7 @@
 .header {
     text-align: center;
     margin-bottom: 50px;
+    margin-top: 100px;
 }
 
 .header h1 {
@@ -107,8 +108,8 @@
 .productCard img {
     width: 100%;
     height: auto;
-    max-width: 200px; /* İhtiyaca göre boyutu ayarlayın */
-    object-fit: cover; /* Görselin orantılı şekilde sığması için */
-    margin-bottom: 10px; /* Resim ile yazı arasındaki mesafe */
-    border-radius: 8px; /* Köşelerin yuvarlatılması */
+    max-width: 200px; 
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 8px; 
 }

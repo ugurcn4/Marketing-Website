@@ -1,11 +1,29 @@
 'use client';
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { FaHome, FaInfoCircle, FaBox, FaEnvelope } from 'react-icons/fa';
+import { FaHome, FaInfoCircle, FaBox, FaEnvelope, FaUserPlus, FaSignOutAlt } from 'react-icons/fa';
 import styles from '../page.module.css';
 
 const Header = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+    const router = useRouter();
+
+    useEffect(() => {
+        const loggedIn = localStorage.getItem('isLoggedIn');
+        if (loggedIn) {
+            setIsLoggedIn(true);
+        }
+    }, []);
+
+    const handleLogout = () => {
+        localStorage.removeItem('isLoggedIn');
+        setIsLoggedIn(false);
+
+        
+        router.push('/signup');
+    };
     return (
         <header className={styles.header}>
             <div className={styles.container}>
@@ -34,10 +52,20 @@ const Header = () => {
                         <FaBox className={styles.icon} />
                         <span className={styles.navText}>Products</span>
                     </Link>
+                    <Link href="/signup" className={styles.navItem}> {/* Signup bağlantısı buraya eklendi */}
+                        <FaUserPlus className={styles.icon} />
+                        <span className={styles.navText}>Signup</span>
+                    </Link>
                     <Link href="/contact" className={styles.navItem}>
                         <FaEnvelope className={styles.icon} />
                         <span className={styles.navText}>Contact</span>
                     </Link>
+                    {isLoggedIn && (
+                        <button onClick={handleLogout} className={styles.logoutButton}>
+                            <FaSignOutAlt className={styles.icon} />
+                            <span className={styles.navText}>Logout</span>
+                        </button>
+                    )}
                 </nav>
             </div>
         </header>
