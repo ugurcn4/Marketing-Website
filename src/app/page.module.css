@@ -2,7 +2,7 @@
 
 /* Genel ayarlar */
 :root {
-  --primary-color: #A294F9; /* Header ve Footer arka plan rengi */
+  --primary-color: #9d93e3; /* Header ve Footer arka plan rengi */
   --secondary-color: #CDC1FF; /* Vurgulu bölümler */
   --light-color: #F5EFFF; /* Açık tonlar */
   --neutral-color: #E5D9F2; /* Nötr tonlar */
@@ -192,6 +192,13 @@
 .productCard p {
   color: var(--secondary-color);
   font-size: 16px;
+}
+
+.productCard:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background-color: var(--neutral-color);
+    color: var(--light-color);
 }
 
 /* Footer */

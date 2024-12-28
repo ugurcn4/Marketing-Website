@@ -1,38 +1,39 @@
-// pages/products.tsx
-
-'use client';
-
-import React from 'react';
+import { useRouter } from 'next/router';
 import styles from '../app/Styles/products.module.css';
+import { productData } from './productfeatures';
+import Header from "@/app/components/Header";
 
 const Products = () => {
+    const router = useRouter();
+
+    const handleProductClick = (id:number) => {
+        const url = `/productfeatures?id=${id}`;
+        console.log(`Navigating to /productfeatures?id=${id}`);
+        router.push(url); 
+    };
+
     return (
         <div className={styles.productsPage}>
             {/* Header */}
+            <Header/>
             <header className={styles.header}>
                 <h1>Our Products</h1>
                 <p>Discover our range of high-quality products designed to meet your needs.</p>
             </header>
-
-            {/* Products Section */}
-            <section className={styles.productsSection}>
-                <div className={styles.productCard}>
-                    <img src="https://via.placeholder.com/150" alt="Product 1" className={styles.productImg} />
-                    <h3>Product 1</h3>
-                    <p>High-quality product for your needs.</p>
-                </div>
-                <div className={styles.productCard}>
-                    <img src="https://via.placeholder.com/150" alt="Product 2" className={styles.productImg} />
-                    <h3>Product 2</h3>
-                    <p>Innovative and reliable solutions.</p>
-                </div>
-                <div className={styles.productCard}>
-                    <img src="https://via.placeholder.com/150" alt="Product 3" className={styles.productImg} />
-                    <h3>Product 3</h3>
-                    <p>Designed with care and precision.</p>
-                </div>
-            </section>
-
+            <div className={styles.productsSection}>
+                {productData.map((product) => (
+                    <div
+                        key={product.id}
+                        className={styles.productCard}
+                        onClick={() => handleProductClick(product.id)}
+                        style={{ cursor: "pointer" }}
+                    >
+                        <img src={product.image} alt={product.name} />
+                        <h3>{product.name}</h3>
+                        <p>{product.description}</p>
+                    </div>
+                ))}
+            </div>
             {/* Footer */}
             <footer className={styles.footer}>
                 <p>&copy; 2024 Your Company Name. All rights reserved.</p>
