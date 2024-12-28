@@ -1,11 +1,10 @@
 /* products.module.css */
 
 :root {
-    --primary-color: #4A90E2;
+    --primary-color: hsl(248, 89%, 78%);
     --secondary-color: #7F8C8D;
     --neutral-color: #F4F6F8;
     --light-color: #FFFFFF;
-    --accent-color: #E94E77;
 }
 
 .productsPage {
@@ -57,7 +56,7 @@
 .productCard:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    background-color: var(--accent-color);
+    background-color: var(--neutral-color);
     color: var(--light-color);
 }
 
