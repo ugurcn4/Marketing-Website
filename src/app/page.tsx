@@ -7,62 +7,65 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
 const Home = () => {
-    //
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
         <div>
-
             {/* Header Section */}
-            <Header />
+            <Header/>
+
             {/* Slider Section */}
             <section className={styles.slider}>
                 <div className={styles.sliderWrapper}>
-                    <img src="https://picsum.photos/1200/700" alt="Slide 1" className={styles.slide} />
-                    <img src="https://picsum.photos/1200/700" alt="Slide 2" className={styles.slide} />
-                    <img src="https://picsum.photos/1200/700" alt="Slide 3" className={styles.slide} />
+                    <img src="https://picsum.photos/1200/700" alt="Ürün 1" className={styles.slide}/>
+                    <img src="https://picsum.photos/1200/700" alt="Ürün 2" className={styles.slide}/>
+                    <img src="https://picsum.photos/1200/700" alt="Ürün 3" className={styles.slide}/>
                 </div>
             </section>
 
             {/* About Section */}
             <section className={styles.about}>
                 <div className={styles.aboutCard}>
-                    <h2 className={styles.aboutTitle}>About Us</h2>
+                    <h2 className={styles.aboutTitle}>Hakkımızda</h2>
                     <p className={styles.aboutText}>
-                        Welcome to our marketing site! We are dedicated to providing the best products and services
-                        to meet your needs. Explore our offerings and discover what makes us stand out.
+                        En iyi ekran kartlarını sunmak için buradayız! Ürünlerimiz, oyun ve profesyonel performansı
+                        bir üst seviyeye taşımak için tasarlanmıştır. Kalite, yenilikçilik ve müşteri memnuniyetini
+                        önceliğimiz haline getiriyoruz.
                     </p>
                 </div>
             </section>
 
             {/* Products Section */}
             <section className={styles.products}>
-                <h2>Our Products</h2>
+                <h2>Ürünlerimiz</h2>
                 <div className={styles.productGrid}>
                     <div className={styles.productCard}>
-                        <img src="https://picsum.photos/150" alt="Product 1" />
-                        <h3>Product 1</h3>
-                        <p>High-quality product for your needs.</p>
+                        <img src="https://picsum.photos/150" alt="Ekran Kartı 1"/>
+                        <h3>RTX Ultra</h3>
+                        <p>Yüksek çözünürlükte oyun ve grafik tasarım için ideal ekran kartı.</p>
                     </div>
                     <div className={styles.productCard}>
-                        <img src="https://picsum.photos/150" alt="Product 2" />
-                        <h3>Product 2</h3>
-                        <p>Innovative and reliable solutions.</p>
+                        <img src="https://picsum.photos/150" alt="Ekran Kartı 2"/>
+                        <h3>GTX Pro</h3>
+                        <p>Performans ve verimlilik arayan profesyoneller için.</p>
                     </div>
                     <div className={styles.productCard}>
-                        <img src="https://picsum.photos/150" alt="Product 3" />
-                        <h3>Product 3</h3>
-                        <p>Designed with care and precision.</p>
+                        <img src="https://picsum.photos/150" alt="Ekran Kartı 3"/>
+                        <h3>Vega Master</h3>
+                        <p>Yüksek hız ve dayanıklılığı bir arada sunar.</p>
                     </div>
                 </div>
             </section>
 
-            <Testimonials /> {/* Testimonials bileşeni burada */}
+            {/* Testimonials Section */}
+            <section className={styles.testimonials}>
+                <Testimonials/>
+            </section>
 
             {/* Footer Section */}
-            <Footer />
+            <Footer/>
         </div>
     );
 };

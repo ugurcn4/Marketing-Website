@@ -13,8 +13,16 @@ const Footer = () => {
     return (
         <footer className={styles.footer}>
             <div className={styles.footerContent}>
-                <div className={styles.logo}>
-                    <h1>Logo</h1>
+                <div className={styles.footerLogo}>
+                    <div className={styles.logo}>
+                        <img src="/img/next-js.png" alt="Next.js Logo"
+                             className={`${styles.logoImg} ${styles.logoImgNext}`} />
+                        <img src="/img/react.png" alt="React.js Logo"
+                             className={`${styles.logoImg} ${styles.logoImgNext}`} />
+                    </div>
+                    <p className={styles.footerDescription}>
+                        Powered by Next.js & React.js
+                    </p>
                 </div>
                 <nav className={styles.footerNav}>
                     <Link href="/about" className={styles.footerLink}>About</Link>
@@ -25,7 +33,7 @@ const Footer = () => {
                     <FaArrowUp className={styles.icon} />
                 </button>
             </div>
-            <p>&copy; 2024 Marketing Site. All rights reserved.</p>
+            <p className={styles.footerCopy}>&copy; 2024 Marketing Site. All rights reserved.</p>
         </footer>
     );
 };

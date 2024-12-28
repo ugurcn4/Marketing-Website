@@ -2,7 +2,7 @@
 
 /* Genel ayarlar */
 :root {
-  --primary-color: #A294F9; /* Header ve Footer arka plan rengi */
+  --primary-color: #7a6aef; /* Header ve Footer arka plan rengi */
   --secondary-color: #CDC1FF; /* Vurgulu bölümler */
   --light-color: #F5EFFF; /* Açık tonlar */
   --neutral-color: #E5D9F2; /* Nötr tonlar */
@@ -13,9 +13,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 10px 20px;
   background-color: var(--primary-color);
-  color: var(--light-color);
+  color: var(--neutral-color);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -23,16 +23,31 @@
 }
 
 .logo {
-  font-size: 28px;
-  font-weight: bold;
-  letter-spacing: 1.5px;
-  color: var(--secondary-color);
-  transition: color 0.3s ease;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.logo:hover {
-  color: var(--neutral-color);
+.logoImg {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logoImgNext {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.logoImg:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logoImgNext:hover {
+  transform: scale(1.15);
+  border-color: var(--accent-color);
 }
 
 .nav {
@@ -41,7 +56,7 @@
 }
 
 .navItem {
-  color: var(--light-color);
+  color: var(--neutral-color);
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
@@ -51,15 +66,10 @@
 }
 
 .navItem:hover {
-  color: var(--primary-color);
-  background-color: var(--secondary-color);
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.navItem:active {
-  transform: translateY(0);
-  box-shadow: none;
 }
 
 /* Slider */
@@ -196,12 +206,13 @@
 
 /* Footer */
 .footer {
-  padding: 40px 20px;
   background-color: var(--primary-color);
   color: var(--light-color);
+  padding: 40px 20px;
   text-align: center;
   font-size: 14px;
-  border-top: 5px solid var(--secondary-color);
+  position: relative;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .footerContent {
@@ -209,38 +220,102 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
-.footerLogo h1 {
-  color: var(--secondary-color);
+.footerLogo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.footerLogo .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footerLogo .logoImg {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.footerLogo .logoImgNext {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.footerLogo .logoImg:hover {
+  transform: scale(1.1);
+}
+
+.footerLogo .logoImgNext:hover {
+  transform: scale(1.15);
+  border-color: var(--accent-color);
+}
+
+.footerDescription {
+  font-size: 14px;
+  color: var(--light-color);
+  font-weight: 500;
+  margin-top: 10px;
+  opacity: 0.8;
 }
 
 .footerNav {
   display: flex;
   gap: 25px;
+  flex: 1;
+  justify-content: center;
 }
 
 .footerLink {
   color: var(--light-color);
   text-decoration: none;
   font-size: 16px;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 .footerLink:hover {
   color: var(--secondary-color);
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .scrollToTopButton {
   background-color: var(--secondary-color);
   border: none;
-  padding: 10px 15px;
+  padding: 12px;
   border-radius: 50%;
   color: var(--light-color);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
 }
 
 .scrollToTopButton:hover {
-  background-color: var(--primary-color);
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+/* Footer copy */
+.footerCopy {
+  font-size: 14px;
+  color: var(--light-color);
+  opacity: 0.7;
+  margin-top: 20px;
 }

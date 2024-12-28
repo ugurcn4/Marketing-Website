@@ -9,11 +9,12 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
-                <img src={"https://picsum.photos/100/75"} alt="Logo" />
+                <img src="/img/next-js.png" alt="Next.js Logo" className={`${styles.logoImg} ${styles.logoImgNext}`}/>
+                <img src="/img/react.png" alt="React.js Logo" className={`${styles.logoImg} ${styles.logoImgNext}`}/>
             </div>
             <nav className={styles.nav}>
                 <Link href="/" className={styles.navItem}>
-                    <FaHome className={styles.icon} /> Home
+                    <FaHome className={styles.icon}/> Home
                 </Link>
                 <Link href="/about" className={styles.navItem}>
                     <FaInfoCircle className={styles.icon} /> About
