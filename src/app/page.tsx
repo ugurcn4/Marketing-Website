@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './page.module.css';
 import Testimonials from "@/app/components/Testimonials";
 import Header from "@/app/components/Header";
@@ -10,6 +10,12 @@ import { useRouter } from 'next/navigation';
 
 const Home = () => {
     const router = useRouter();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true); // Bileşen mount olduktan sonra mounted'i true yapıyoruz
+    }, []);
+
     const handleProductClick = (id:number) => {
         const url = `/productfeatures?id=${id}`;
         console.log(`Navigating to /productfeatures?id=${id}`);
@@ -20,6 +26,10 @@ const Home = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+    if (!mounted) {
+        return null; // Bileşen istemci tarafında render edilene kadar hiçbir şey render etmiyoruz
+    }
+    
     return (
         <div>
 
