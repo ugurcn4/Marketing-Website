@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { FaHome, FaInfoCircle, FaBox, FaEnvelope } from 'react-icons/fa';
+import { FaHome, FaInfoCircle, FaBox, FaEnvelope, FaUserPlus } from 'react-icons/fa';
 import styles from '../page.module.css';
 
 const Header = () => {
@@ -33,6 +33,10 @@ const Header = () => {
                     <Link href="/products" className={styles.navItem}>
                         <FaBox className={styles.icon} />
                         <span className={styles.navText}>Products</span>
+                    </Link>
+                    <Link href="/signup" className={styles.navItem}> {/* Signup bağlantısı buraya eklendi */}
+                        <FaUserPlus className={styles.icon} />
+                        <span className={styles.navText}>Signup</span>
                     </Link>
                     <Link href="/contact" className={styles.navItem}>
                         <FaEnvelope className={styles.icon} />

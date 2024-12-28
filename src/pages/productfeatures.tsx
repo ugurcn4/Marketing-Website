@@ -1,6 +1,6 @@
 'use client';
 
-import React, {useEffect} from 'react';
+import React, {useEffect,useState} from 'react';
 import { useRouter } from 'next/router';
 import styles from '../app/Styles/productfeatures.module.css';
 import Header from "@/app/components/Header";
@@ -37,12 +37,22 @@ export const productData = [
 ];
 
 const ProductFeatures = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
     const router = useRouter();
     const { id } = router.query; // URL'den ürün ID'sini alır
 
+    useEffect(() => {
+        const loggedIn = localStorage.getItem('isLoggedIn');
+        if (!loggedIn) {
+          alert("Ürün özelliklerini görebilmek için giriş yapınız");
+          router.push('/signup');
+        } else {
+          setIsLoggedIn(true); 
+        }
+      }, [router]);
 
     useEffect(() => {
-        console.log(id);  // ID parametresinin doğru şekilde geldiğini kontrol edin
+        console.log(id); 
     }, [id]);
     const product = productData.find((item) => item.id === parseInt(id as string));
 

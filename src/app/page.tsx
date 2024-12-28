@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation';
 
 const Home = () => {
     const router = useRouter();
-    const [mounted, setMounted] = useState(false);
+    const [mounted, setMounted] = useState<boolean>(false);
 
     useEffect(() => {
         setMounted(true); // Bileşen mount olduktan sonra mounted'i true yapıyoruz
