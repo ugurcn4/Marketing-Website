@@ -6,8 +6,8 @@ import { FaArrowUp } from 'react-icons/fa';
 import styles from '../page.module.css';
 
 const Footer = () => {
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    const scrollToTop = () => {//Sayfa kaydırıldığında sayfanın en üstüne dönebilmek için bir işlev eklendi.
+        window.scrollTo({ top: 0, behavior: 'smooth' });//Yumuşak bir şekilde sayfanın en üstüne gönderme sağlandı.
     };
 
     return (
@@ -24,7 +24,7 @@ const Footer = () => {
                         Powered by Next.js & React.js
                     </p>
                 </div>
-                <nav className={styles.footerNav}>
+                <nav className={styles.footerNav}>{/*Gezinti bağlantıları gruplandırıldı. */}
                     <Link href="/about" className={styles.footerLink}>About</Link>
                     <Link href="/products" className={styles.footerLink}>Products</Link>
                     <Link href="/contact" className={styles.footerLink}>Contact</Link>

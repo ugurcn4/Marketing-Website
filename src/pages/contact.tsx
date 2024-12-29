@@ -4,39 +4,42 @@ import React, {useState} from 'react';
 import styles from '../app/Styles/contact.module.css';
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
-import { productData } from './productfeatures';
+import { productData } from './productfeatures';//Ürün seçim kısmı için kullanılacak veri dizisi import edildi.
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState({//Input değerleri tutuldu.
         name: '',
         email: '',
         product: '',
         message: '',
     });
-    const [isSending, setIsSending] = useState(false);
-    const [responseMessage, setResponseMessage] = useState('');
+    const [isSending, setIsSending] = useState(false);//Buton durumu kontrol edildi.
+    const [responseMessage, setResponseMessage] = useState('');//Form sonrası yanıt mesajı tutuldu.
 
+    //Değişikliklerin kaydedilmesi için fonksiyon oluşturuldu.
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
+    //Form gönderme fonksiyonu oluşturuldu.
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSending(true);
         setResponseMessage('');
 
         try {
-            const res = await fetch('/api/contact', {
+            const res = await fetch('/api/contact', {//Fetch API'si kullanıldı.
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(formData),//JSON formatında sunucuya gönderildi.
             });
 
-            const result = await res.json();
+            const result = await res.json();//Sunucudan yanıt alındı.
 
+            //Alınan yanıta göre mesaj gönderildi.
             if (res.ok) {
                 setResponseMessage('Message sent successfully!');
             } else {
@@ -91,7 +94,7 @@ const Contact = () => {
                             value={formData.product}
                             onChange={handleChange}
                             required
-                        >
+                        >{/*Kullanıcıya istediği ürünü seçme imkanı tanındı. */}
                             <option value="" disabled>
                                 Select a product
                             </option>

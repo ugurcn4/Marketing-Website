@@ -7,22 +7,22 @@ import { FaHome, FaInfoCircle, FaBox, FaEnvelope, FaUserPlus, FaSignOutAlt } fro
 import styles from '../page.module.css';
 
 const Header = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);//Kullanıcının giriş yapıp yapmadığı izlendi.
     const router = useRouter();
 
-    useEffect(() => {
-        const loggedIn = localStorage.getItem('isLoggedIn');
-        if (loggedIn) {
+    useEffect(() => {//Bileşen yüklendiğinde kullanıcı girişi kontrol edildi.
+        const loggedIn = localStorage.getItem('isLoggedIn');//Tarayıcı depolamasındaki anahtar okundu.
+        if (loggedIn) {//Okunan anahtara göre değer değiştirldi.
             setIsLoggedIn(true);
         }
     }, []);
 
     const handleLogout = () => {
-        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('isLoggedIn');//Giriş durumu tarayıcıdan kaldırıldı.
         setIsLoggedIn(false);
 
         
-        router.push('/signup');
+        router.push('/signup');//Yönlendirme yapıldı.
     };
     return (
         <header className={styles.header}>
@@ -62,7 +62,7 @@ const Header = () => {
                     </Link>
                     {isLoggedIn && (
                         <button onClick={handleLogout} className={styles.logoutButton}>
-                            <FaSignOutAlt className={styles.icon} />
+                            <FaSignOutAlt className={styles.icon} />{/*Kullanıcının giriş durumuna göre Çıkış düğmesi gösterildi. */}
                             <span className={styles.navText}>Logout</span>
                         </button>
                     )}

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styles from './../Styles/Slider.module.css';
 
-const Slider = () => {
+const Slider = () => {//Gösterilen slaytın indeksi tutuldu.
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    // Slider içeriği: Görseller ve metinler
+    
     const slides = [
         {
             src: "/img/slider1.jpg",
@@ -23,20 +23,23 @@ const Slider = () => {
         },
     ];
 
+    //Slayt geçişleri düzenlendi.
     const handlePrev = () => {
-        setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? slides.length - 1 : prevIndex - 1
+        setCurrentIndex((prevIndex) =>//Eğer şu anki slayt ilk slaytsa, son slayta geçiş yapılır.
+            prevIndex === 0 ? slides.length - 1 : prevIndex - 1//Değilse, önceki slayta gidilir.
+
         );
     };
 
     const handleNext = () => {
-        setCurrentIndex((prevIndex) =>
-            prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+        setCurrentIndex((prevIndex) =>//Eğer şu anki slayt son slaytsa, ilk slayta dönülür.
+            prevIndex === slides.length - 1 ? 0 : prevIndex + 1 //Değilse, bir sonraki slayta gidilir.
         );
     };
 
     return (
         <section className={styles.slider}>
+            {/*Aktif slaytı göstermek için kaydırma işlemi yapıldı. */}
             <div
                 className={styles.sliderWrapper}
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -51,6 +54,7 @@ const Slider = () => {
                     </div>
                 ))}
             </div>
+            {/*Butonlara slayt geçiş özell,kleri eklendi */}
             <button className={`${styles.sliderButton} ${styles.left}`} onClick={handlePrev}>
                 &lt;
             </button>

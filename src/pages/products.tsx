@@ -6,10 +6,11 @@ import Header from "@/app/components/Header";
 const Products = () => {
     const router = useRouter();
 
+    //Ürün kartına tıklandığında, ürünün detay sayfasına yönlendiren fonksiyon oluşturuldu.
     const handleProductClick = (id:number) => {
-        const url = `/productfeatures?id=${id}`;
+        const url = `/productfeatures?id=${id}`;// Ürün detay sayfasının URL'si oluşturuldu.
         console.log(`Navigating to /productfeatures?id=${id}`);
-        router.push(url); 
+        router.push(url); //Sayfaya yönlendirildi.
     };
 
     return (

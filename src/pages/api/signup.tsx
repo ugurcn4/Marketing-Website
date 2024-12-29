@@ -1,6 +1,5 @@
-// /pages/api/signup.ts
 import { NextApiRequest, NextApiResponse } from 'next';
-
+//Kullanıcı giriş bilgileri alındı. Değer bulunamayan kısımlar için hata oluşturuldu.
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
         const { username, email, password } = req.body;

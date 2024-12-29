@@ -11,16 +11,16 @@ import { useRouter } from 'next/navigation';
 
 const Home = () => {
     const router = useRouter();
-    const [mounted, setMounted] = useState<boolean>(false);
+    const [mounted, setMounted] = useState<boolean>(false);//Bileşenin tarayıcıda render edildiği kontrol edildi.
 
-    useEffect(() => {
-        setMounted(true); // Bileşen mount olduktan sonra mounted'i true yapıyoruz
+    useEffect(() => {//Mounted durumu güncellendi.
+        setMounted(true); 
     }, []);
 
-    const handleProductClick = (id:number) => {
-        const url = `/productfeatures?id=${id}`;
+    const handleProductClick = (id:number) => {//Tıklama fonksiyonu oluşturuldu.
+        const url = `/productfeatures?id=${id}`;//Gelen id'ye göre url belirleme işlemi yapıldı.
         console.log(`Navigating to /productfeatures?id=${id}`);
-        router.push(url); 
+        router.push(url); //Sayfa yönlendirilmesi yapıldı.
     };
 
     const scrollToTop = () => {
@@ -28,7 +28,7 @@ const Home = () => {
     };
 
     if (!mounted) {
-        return null; // Bileşen istemci tarafında render edilene kadar hiçbir şey render etmiyoruz
+        return null; 
     }
 
     return (

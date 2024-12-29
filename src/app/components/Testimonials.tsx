@@ -1,4 +1,3 @@
-// components/Testimonials.tsx
 
 import React from 'react';
 import styles from '../Styles/testimonials.module.css';

@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import styles from '../app/Styles/productfeatures.module.css';
 import Header from "@/app/components/Header";
 
+//Ürün verilerini tutan sabit tbir dizi oluşturuldu.
 export const productData = [
     {
         id: 1,
@@ -39,23 +40,26 @@ export const productData = [
 const ProductFeatures = () => {
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
     const router = useRouter();
-    const { id } = router.query; // URL'den ürün ID'sini alır
+    const { id } = router.query; // URL'den ürün ID'si alındı.
 
+    //Kullanıcı giriş durumu kontrol edildi.
     useEffect(() => {
         const loggedIn = localStorage.getItem('isLoggedIn');
         if (!loggedIn) {
           alert("Ürün özelliklerini görebilmek için giriş yapınız");
-          router.push('/signup');
+          router.push('/signup');//Giriş durumuna göre sayfa yönlendirilmesi yapıldı.
         } else {
-          setIsLoggedIn(true); 
+          setIsLoggedIn(true); //Giriş durumu düzenlendi.
         }
       }, [router]);
 
     useEffect(() => {
         console.log(id); 
     }, [id]);
+    //Ürün verileri ID'sine göre filtrelendi.
     const product = productData.find((item) => item.id === parseInt(id as string));
 
+    
     if (!product) {
         return <p>Product not found</p>;
     }

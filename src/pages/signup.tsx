@@ -14,27 +14,30 @@ const SignUp = () => {
         password: '',
         confirmPassword: '',
     });
-    const [isSending, setIsSending] = useState(false);
-    const [responseMessage, setResponseMessage] = useState('');
+    const [isSending, setIsSending] = useState(false);// Kayıt işlemi devam ederken butonun durumu kontrol edildi.
+    const [responseMessage, setResponseMessage] = useState('');// Kayıt işlemi sonrası mesaj
 
+    // Kayıt formu alanındaki değişiklikler takip edilddi.
     const handleSignupChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setSignupData((prev) => ({ ...prev, [name]: value }));
     };
 
+    // Kayıt formunun gönderilmesi işlemi
     const handleSignupSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsSending(true);
+        e.preventDefault();// Formun sayfa yenilemesi engellendi.
+        setIsSending(true);// Kayıt işlemi başladığında buton devre dışı bırakıldı.
         setResponseMessage('');
     
         // Şifre doğrulama
         if (signupData.password !== signupData.confirmPassword) {
             setResponseMessage('Şifreler eşleşmiyor.');
-            setIsSending(false);
+            setIsSending(false);// Kayıt işlemi durduruldu.
             return;
         }
     
         try {
+            // API'ye POST isteği gönderilir
             const res = await fetch('./api/signup', {
                 method: 'POST',
                 headers: {
@@ -48,7 +51,7 @@ const SignUp = () => {
             if (res.ok) {
                 setResponseMessage('Kayıt başarıyla oluşturuldu!');
                 
-                // Kayıt başarılıysa giriş yapılmış gibi göster
+                // Kayıt başarılı olduğunda giriş yapılmış olarak gösterildi.
                 localStorage.setItem('isLoggedIn', 'true');
                 
                 // "Ürünler" sayfasına yönlendir
@@ -59,7 +62,7 @@ const SignUp = () => {
         } catch (error) {
             setResponseMessage('Bir hata oluştu.');
         } finally {
-            setIsSending(false);
+            setIsSending(false);//Buton tekrar aktif hale getirildi.
         }
     };
     
@@ -84,9 +87,8 @@ const SignUp = () => {
                             name="username"
                             value={signupData.username}
                             onChange={handleSignupChange}
-                            required
-                        />
-                    </div>
+                            required                       />
+                    </div>{/*Doldurulması zorunlu alan olarak işaretlendi. */}  
                     <div className={styles.formGroup}>
                         <label htmlFor="email">E-posta Adresiniz</label>
                         <input
